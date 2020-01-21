@@ -1,2 +1,2 @@
-include ':app', ':data', ':domain'
+include ':ui', ':data', ':domain'
 rootProject.name='Clean Architecture Template'
