@@ -2,11 +2,11 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/navigation_graph"
-    app:startDestination="@+id/templateFeatureFragment">
+    app:startDestination="@+id/searchFragment">
 
 
     <fragment
-        android:id="@+id/templateFeatureFragment"
-        android:name="com.example.lastfm.features.template.TemplateFeatureFragment"
-        android:label="TemplateFeatureFragment" />
+        android:id="@+id/searchFragment"
+        android:name="com.example.lastfm.features.search.SearchFragment"
+        android:label="SearchFragment" />
 </navigation>

@@ -5,7 +5,7 @@ import com.example.lastfm.base.di.DaggerAppComponent
 import com.example.lastfm.base.framework.BaseApplication
 import com.example.data.di.NetworkModule
 
-open class TemplateApplication : BaseApplication() {
+open class LastFmApplication : BaseApplication() {
 
     override val appComponent: AppComponent by lazy {
         DaggerAppComponent.builder()

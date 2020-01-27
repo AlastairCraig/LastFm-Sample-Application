@@ -1,7 +1,7 @@
 package com.example.lastfm.base.di.modules
 
-import com.example.lastfm.base.di.scopes.TemplateFeatureScope
-import com.example.lastfm.features.template.TemplateFeatureFragment
+import com.example.lastfm.base.di.scopes.SearchScope
+import com.example.lastfm.features.search.SearchFragment
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
@@ -9,6 +9,6 @@ import dagger.android.ContributesAndroidInjector
 internal abstract class FragmentModule {
 
     @ContributesAndroidInjector()
-    @TemplateFeatureScope
-    abstract fun contributeTemplateFeatureFragment(): TemplateFeatureFragment
+    @SearchScope
+    abstract fun contributeSearchFragment(): SearchFragment
 }

@@ -2,7 +2,7 @@ package com.example.lastfm.base.di.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.lastfm.features.template.TemplateFeatureViewModel
+import com.example.lastfm.features.search.SearchViewModel
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
@@ -15,6 +15,6 @@ internal abstract class ViewModelModule {
 
     @Binds
     @IntoMap
-    @ViewModelKey(TemplateFeatureViewModel::class)
-    internal abstract fun bindsTemplateFeatureViewModel(templateFeatureViewModel: TemplateFeatureViewModel): ViewModel
+    @ViewModelKey(SearchViewModel::class)
+    internal abstract fun bindsSearchViewModel(searchViewModel: SearchViewModel): ViewModel
 }
