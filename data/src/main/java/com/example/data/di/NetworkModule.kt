@@ -31,11 +31,11 @@ class NetworkModule {
 
         val httpClient = OkHttpClient.Builder()
         httpClient.addInterceptor { chain ->
-            val original = chain.request()
 
-            // Request customization: add request headers
+            val original = chain.request()
             val requestBuilder = original.newBuilder()
-                .header("api_key", API_KEY)
+                .addHeader("api_key", API_KEY)
+                .addHeader("format", "json")
 
             val request = requestBuilder.build()
             chain.proceed(request)
