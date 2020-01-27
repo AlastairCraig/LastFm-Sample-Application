@@ -1,6 +1,5 @@
 package com.example.data.di
 
-import com.example.data.BuildConfig
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
@@ -30,17 +29,24 @@ class NetworkModule {
         val httpLoggingInterceptor = HttpLoggingInterceptor()
         httpLoggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
 
-        if (BuildConfig.DEBUG) {
-            return OkHttpClient.Builder()
-                .addInterceptor(httpLoggingInterceptor)
-                .build()
-        } else {
-            return OkHttpClient.Builder()
-                .build()
+        val httpClient = OkHttpClient.Builder()
+        httpClient.addInterceptor { chain ->
+            val original = chain.request()
+
+            // Request customization: add request headers
+            val requestBuilder = original.newBuilder()
+                .header("api_key", API_KEY)
+
+            val request = requestBuilder.build()
+            chain.proceed(request)
         }
+
+        httpClient.addInterceptor(httpLoggingInterceptor)
+        return httpClient.build()
     }
 
-    companion object{
-        const val BASE_URL = "www.google.com/"
+    companion object {
+        const val BASE_URL = "http://ws.audioscrobbler.com/2.0/"
+        const val API_KEY = "4253906b1ff906d327fb847318a29c1f"
     }
 }
