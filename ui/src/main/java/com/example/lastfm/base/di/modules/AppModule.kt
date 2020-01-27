@@ -1,11 +1,10 @@
-package com.example.cleanarchitecturetemplate.base.di.modules
+package com.example.lastfm.base.di.modules
 
 import android.app.Application
 import android.content.Context
 import com.example.data.di.NetworkModule
 import com.example.data.di.RepoModule
-import com.example.cleanarchitecturetemplate.base.di.modules.UseCaseModule
-import com.example.cleanarchitecturetemplate.base.di.viewmodel.ViewModelModule
+import com.example.lastfm.base.di.viewmodel.ViewModelModule
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton

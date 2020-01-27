@@ -1,4 +1,4 @@
-package com.example.cleanarchitecturetemplate.base.framework
+package com.example.lastfm.base.framework
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel

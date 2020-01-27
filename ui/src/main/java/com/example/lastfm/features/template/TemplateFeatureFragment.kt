@@ -1,7 +1,7 @@
-package com.example.cleanarchitecturetemplate.features.template
+package com.example.lastfm.features.template
 
-import com.example.cleanarchitecturetemplate.R
-import com.example.cleanarchitecturetemplate.base.framework.BaseFragment
+import com.example.lastfm.R
+import com.example.lastfm.base.framework.BaseFragment
 
 class TemplateFeatureFragment : BaseFragment<TemplateFeatureViewModel>() {
 

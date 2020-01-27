@@ -1,8 +1,8 @@
-package com.example.cleanarchitecturetemplate.base.di.viewmodel
+package com.example.lastfm.base.di.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.cleanarchitecturetemplate.features.template.TemplateFeatureViewModel
+import com.example.lastfm.features.template.TemplateFeatureViewModel
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap

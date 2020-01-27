@@ -1,2 +1,2 @@
 include ':ui', ':data', ':domain'
-rootProject.name='Clean Architecture Template'
+rootProject.name='LastFm Sample Application'

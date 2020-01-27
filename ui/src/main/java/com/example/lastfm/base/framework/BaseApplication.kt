@@ -1,6 +1,6 @@
-package com.example.cleanarchitecturetemplate.base.framework
+package com.example.lastfm.base.framework
 
-import com.example.cleanarchitecturetemplate.base.di.AppComponent
+import com.example.lastfm.base.di.AppComponent
 import dagger.android.support.DaggerApplication
 
 abstract class BaseApplication : DaggerApplication() {

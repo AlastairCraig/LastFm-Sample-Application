@@ -1,10 +1,10 @@
-package com.example.cleanarchitecturetemplate.base.di
+package com.example.lastfm.base.di
 
 
 import android.app.Application
 import com.example.data.di.NetworkModule
-import com.example.cleanarchitecturetemplate.base.di.modules.ActivityModule
-import com.example.cleanarchitecturetemplate.base.di.modules.AppModule
+import com.example.lastfm.base.di.modules.ActivityModule
+import com.example.lastfm.base.di.modules.AppModule
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjector

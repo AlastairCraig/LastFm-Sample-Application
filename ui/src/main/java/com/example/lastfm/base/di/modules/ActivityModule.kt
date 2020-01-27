@@ -1,7 +1,7 @@
-package com.example.cleanarchitecturetemplate.base.di.modules
+package com.example.lastfm.base.di.modules
 
-import com.example.cleanarchitecturetemplate.MainActivity
-import com.example.cleanarchitecturetemplate.base.di.scopes.ActivityScope
+import com.example.lastfm.MainActivity
+import com.example.lastfm.base.di.scopes.ActivityScope
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 

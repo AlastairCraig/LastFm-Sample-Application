@@ -1,8 +1,8 @@
-package com.example.cleanarchitecturetemplate.base
+package com.example.lastfm.base
 
-import com.example.cleanarchitecturetemplate.base.di.AppComponent
-import com.example.cleanarchitecturetemplate.base.di.DaggerAppComponent
-import com.example.cleanarchitecturetemplate.base.framework.BaseApplication
+import com.example.lastfm.base.di.AppComponent
+import com.example.lastfm.base.di.DaggerAppComponent
+import com.example.lastfm.base.framework.BaseApplication
 import com.example.data.di.NetworkModule
 
 open class TemplateApplication : BaseApplication() {

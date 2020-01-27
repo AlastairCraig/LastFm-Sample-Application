@@ -1,4 +1,4 @@
-package com.example.cleanarchitecturetemplate.base.di.scopes
+package com.example.lastfm.base.di.scopes
 
 import javax.inject.Scope
 

@@ -7,6 +7,6 @@
 
     <fragment
         android:id="@+id/templateFeatureFragment"
-        android:name="com.example.cleanarchitecturetemplate.features.template.TemplateFeatureFragment"
+        android:name="com.example.lastfm.features.template.TemplateFeatureFragment"
         android:label="TemplateFeatureFragment" />
 </navigation>

@@ -1,7 +1,7 @@
-package com.example.cleanarchitecturetemplate.base.di.modules
+package com.example.lastfm.base.di.modules
 
-import com.example.cleanarchitecturetemplate.base.di.scopes.TemplateFeatureScope
-import com.example.cleanarchitecturetemplate.features.template.TemplateFeatureFragment
+import com.example.lastfm.base.di.scopes.TemplateFeatureScope
+import com.example.lastfm.features.template.TemplateFeatureFragment
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 

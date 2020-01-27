@@ -1,4 +1,4 @@
-package com.example.cleanarchitecturetemplate
+package com.example.lastfm
 
 import android.os.Bundle
 import dagger.android.support.DaggerAppCompatActivity

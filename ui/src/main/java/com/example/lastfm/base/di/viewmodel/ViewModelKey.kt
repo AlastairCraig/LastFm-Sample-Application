@@ -1,4 +1,4 @@
-package com.example.cleanarchitecturetemplate.base.di.viewmodel
+package com.example.lastfm.base.di.viewmodel
 
 import androidx.lifecycle.ViewModel
 import dagger.MapKey
