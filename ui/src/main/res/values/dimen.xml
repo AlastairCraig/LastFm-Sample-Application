@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <dimen name="small_margin">8dp</dimen>
+    <dimen name="medium_margin">16dp</dimen>
+    <dimen name="large_margin">32dp</dimen>
+
+    <!--    Search Artist-->
     <dimen name="info_image_size">200dp</dimen>
     <dimen name="info_text_size">15sp</dimen>
+
+    <!--    Artist list item-->
+    <dimen name="card_elevation">4dp</dimen>
+    <dimen name="thumbnail_image_size">100dp</dimen>
+    <dimen name="artist_name_text_size">24sp</dimen>
+
+
 </resources>
