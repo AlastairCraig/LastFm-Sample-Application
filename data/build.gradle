@@ -9,7 +9,6 @@ apply from: rootDir.absolutePath + '/base.gradle'
 dependencies {
 
     //Retrofit
-    implementation "com.squareup.retrofit2:retrofit:$retrofit2Version"
     implementation "com.squareup.retrofit2:converter-gson:$retrofit2Version"
     implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit2Version"
 
