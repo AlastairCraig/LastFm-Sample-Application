@@ -13,6 +13,9 @@ ext {
     rxAndroidVersion = '2.0.2'
     rxKotlinVersion = '2.2.0'
 
+    //UI
+    materialSearchViewVersion = '1.4.0'
+
     //testing
     jUnit4Version = "4.12"
     assertJVersion = "3.12.2"
