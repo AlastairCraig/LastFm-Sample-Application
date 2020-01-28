@@ -31,13 +31,14 @@ class NetworkModule {
 
         val httpClient = OkHttpClient.Builder()
         httpClient.addInterceptor { chain ->
-
-            val original = chain.request()
-            val requestBuilder = original.newBuilder()
-                .addHeader("api_key", API_KEY)
-                .addHeader("format", "json")
-
-            val request = requestBuilder.build()
+            var request = chain.request()
+            val url = request.url.newBuilder()
+                .addQueryParameter("api_key", API_KEY)
+                .addQueryParameter("format", "json")
+                .build()
+            request = request.newBuilder()
+                .url(url)
+                .build()
             chain.proceed(request)
         }
 
@@ -46,7 +47,7 @@ class NetworkModule {
     }
 
     companion object {
-        const val BASE_URL = "http://ws.audioscrobbler.com/2.0/"
+        const val BASE_URL = "https://ws.audioscrobbler.com/2.0/"
         const val API_KEY = "4253906b1ff906d327fb847318a29c1f"
     }
 }
