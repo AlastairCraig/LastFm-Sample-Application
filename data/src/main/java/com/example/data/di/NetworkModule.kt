@@ -1,5 +1,7 @@
 package com.example.data.di
 
+import com.example.data.network.ArtistSearchService
+import com.example.data.network.LastFmApi
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
@@ -44,6 +46,19 @@ class NetworkModule {
 
         httpClient.addInterceptor(httpLoggingInterceptor)
         return httpClient.build()
+    }
+
+    @Singleton
+    @Provides
+    fun provideArtistSearchService(lastFmApi: LastFmApi): ArtistSearchService {
+        return ArtistSearchService(lastFmApi)
+    }
+
+    @Singleton
+    @Provides
+    fun provideRecipeApi(retrofit: Retrofit): LastFmApi {
+
+        return retrofit.create(LastFmApi::class.java)
     }
 
     companion object {

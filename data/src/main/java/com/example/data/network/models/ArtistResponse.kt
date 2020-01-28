@@ -1,6 +1,7 @@
 package com.example.data.network.models
 
 
+import com.example.domain.entites.Artist
 import com.google.gson.annotations.SerializedName
 
 data class ArtistResponse(
@@ -17,3 +18,8 @@ data class ArtistResponse(
     @SerializedName("image")
     val image: List<Image>
 )
+
+fun List<ArtistResponse>.toArtistDomain(): List<Artist>{
+    return this.map { Artist(it.name, it.image[0].text, it.listeners) }
+}
+
