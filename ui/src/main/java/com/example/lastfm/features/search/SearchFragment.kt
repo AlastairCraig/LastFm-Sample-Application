@@ -32,6 +32,7 @@ class SearchFragment : BaseFragment<SearchViewModel>() {
         })
         setHasOptionsMenu(true)
         setUpSearchView()
+        viewModel.enableStartState()
         //viewModel.getData()
     }
 
@@ -44,6 +45,7 @@ class SearchFragment : BaseFragment<SearchViewModel>() {
 
     private fun showStartScreen() {
 
+        start_screen.visibility = View.VISIBLE
     }
 
     private fun showList(data: SearchViewState.DataReady) {

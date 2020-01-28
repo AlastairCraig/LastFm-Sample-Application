@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">LastFm Sample Application</string>
+
+    <!--Start Screen-->
+    <string name="start_screen_text">Search for Music Artists by clicking the search icon at the top</string>
 </resources>

@@ -16,6 +16,10 @@ class SearchViewModel @Inject constructor(
 
     val state: MutableLiveData<SearchViewState> = MutableLiveData()
 
+    fun enableStartState(){
+        state.value = SearchViewState.StartScreen
+    }
+
     fun getData() {
         val QUERY = "cher"
 

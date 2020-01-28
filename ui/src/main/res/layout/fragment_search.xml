@@ -16,4 +16,6 @@
             android:layout_height="wrap_content" />
     </FrameLayout>
 
+    <include layout="@layout/view_start_state"
+        android:id="@+id/start_screen"/>
 </LinearLayout>
