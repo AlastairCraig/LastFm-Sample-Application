@@ -1,4 +1,4 @@
-package com.example.lastfm.features.search
+package com.example.lastfm.features.search.ui
 
 import android.os.Bundle
 import android.view.Menu
@@ -8,6 +8,8 @@ import android.view.View
 import androidx.lifecycle.Observer
 import com.example.lastfm.R
 import com.example.lastfm.base.framework.BaseFragment
+import com.example.lastfm.features.search.SearchViewModel
+import com.example.lastfm.features.search.SearchViewState
 import com.miguelcatalan.materialsearchview.MaterialSearchView
 import kotlinx.android.synthetic.main.fragment_search.*
 
