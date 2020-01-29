@@ -25,6 +25,11 @@
         layout="@layout/view_no_results_state"
         android:visibility="gone" />
 
+    <include
+        android:id="@+id/loading_screen"
+        layout="@layout/view_loading_state"
+        android:visibility="gone" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"

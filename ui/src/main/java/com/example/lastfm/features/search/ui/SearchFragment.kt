@@ -58,6 +58,7 @@ class SearchFragment : BaseFragment<SearchViewModel>(), ArtistItemClickListener 
         start_screen.visibility = View.VISIBLE
         recycler_view.visibility = View.GONE
         no_results_screen.visibility = View.GONE
+        loading_screen.visibility = View.GONE
     }
 
     private fun showList(data: SearchViewState.DataReady) {
@@ -65,14 +66,15 @@ class SearchFragment : BaseFragment<SearchViewModel>(), ArtistItemClickListener 
         recycler_view.visibility = View.VISIBLE
         start_screen.visibility = View.GONE
         no_results_screen.visibility = View.GONE
+        loading_screen.visibility = View.GONE
         setupRecyclerView(data.artists)
     }
 
     private fun setupRecyclerView(artistList: List<Artist>) {
 
-        val favoritesAdapter = ArtistListAdapter(artistList, this)
+        val artistListAdapter = ArtistListAdapter(artistList, this)
         recycler_view.apply {
-            adapter = favoritesAdapter
+            adapter = artistListAdapter
         }
     }
 
@@ -81,6 +83,7 @@ class SearchFragment : BaseFragment<SearchViewModel>(), ArtistItemClickListener 
         no_results_screen.visibility = View.VISIBLE
         start_screen.visibility = View.GONE
         recycler_view.visibility = View.GONE
+        loading_screen.visibility = View.GONE
     }
 
     private fun showErrorDialog() {
@@ -98,6 +101,10 @@ class SearchFragment : BaseFragment<SearchViewModel>(), ArtistItemClickListener 
 
     private fun showLoadingScreen() {
 
+        loading_screen.visibility = View.VISIBLE
+        no_results_screen.visibility = View.GONE
+        start_screen.visibility = View.GONE
+        recycler_view.visibility = View.GONE
     }
 
     private fun setUpSearchView() {
