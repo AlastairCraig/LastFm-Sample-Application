@@ -14,17 +14,19 @@ class DetailViewModel @Inject constructor(
 
     val state: MutableLiveData<DetailViewState> = MutableLiveData()
 
-    fun getArtistInfoData() {
+    fun getArtistInfoData(artistName: String) {
         state.value = DetailViewState.Loading
 
-        val ARTIST_NAME = "Cher"
-
-        val disposable = getArtistInfoUseCase.execute(ARTIST_NAME)
+        val disposable = getArtistInfoUseCase.execute(artistName)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            .subscribe { artistInfo ->
-                state.value = DetailViewState.DataReady(artistInfo)
-            }
+            .subscribe(
+                { artistInfo ->
+                    state.value = DetailViewState.DataReady(artistInfo)
+                },
+                { error ->
+                    state.value = DetailViewState.Error
+                })
         addDisposable(disposable)
     }
 }

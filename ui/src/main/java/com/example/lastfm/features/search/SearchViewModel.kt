@@ -26,11 +26,13 @@ class SearchViewModel @Inject constructor(
         val disposable = getArtistsUseCase.execute(query)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            .subscribe({ artistList ->
-                checkListState(artistList)
-            }, { error ->
-                state.value = SearchViewState.Error
-            })
+            .subscribe(
+                { artistList ->
+                    checkListState(artistList)
+                },
+                { error ->
+                    state.value = SearchViewState.Error
+                })
         addDisposable(disposable)
     }
 

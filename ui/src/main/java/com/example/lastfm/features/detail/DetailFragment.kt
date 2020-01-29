@@ -1,9 +1,11 @@
 package com.example.lastfm.features.detail
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.navArgs
 import com.example.lastfm.R
 import com.example.lastfm.base.framework.BaseFragment
 import com.squareup.picasso.Picasso
@@ -17,6 +19,8 @@ class DetailFragment : BaseFragment<DetailViewModel>() {
 
     override fun layoutId(): Int = R.layout.fragment_detail
 
+    private val args: DetailFragmentArgs by navArgs()
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -28,7 +32,7 @@ class DetailFragment : BaseFragment<DetailViewModel>() {
                 is DetailViewState.DataReady -> showDetailView(it)
             }
         })
-        viewModel.getArtistInfoData()
+        viewModel.getArtistInfoData(args.artistName)
     }
 
     private fun showLoadingScreen() {
@@ -39,6 +43,15 @@ class DetailFragment : BaseFragment<DetailViewModel>() {
 
     private fun showErrorDialog() {
 
+        val errorDialog = AlertDialog.Builder(activity)
+            .setTitle(getString(R.string.error_title))
+            .setMessage(getString(R.string.error_message))
+            .setPositiveButton(getString(R.string.error_button_text)) { dialog, _ ->
+                dialog.dismiss()
+                viewModel.getArtistInfoData(args.artistName)
+            }
+            .create()
+        errorDialog.show()
     }
 
     private fun showDetailView(data: DetailViewState.DataReady) {
