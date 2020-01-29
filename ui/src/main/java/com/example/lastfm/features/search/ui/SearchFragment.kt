@@ -1,5 +1,6 @@
 package com.example.lastfm.features.search.ui
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
@@ -16,6 +17,8 @@ import com.miguelcatalan.materialsearchview.MaterialSearchView
 import kotlinx.android.synthetic.main.fragment_search.*
 
 class SearchFragment : BaseFragment<SearchViewModel>(), ArtistItemClickListener {
+
+    private lateinit var mQuery: String
 
     override fun getViewModelClass(): Class<SearchViewModel> =
         SearchViewModel::class.java
@@ -82,6 +85,15 @@ class SearchFragment : BaseFragment<SearchViewModel>(), ArtistItemClickListener 
 
     private fun showErrorDialog() {
 
+        val errorDialog = AlertDialog.Builder(activity)
+            .setTitle(getString(R.string.error_title))
+            .setMessage(getString(R.string.error_message))
+            .setPositiveButton(getString(R.string.error_button_text)) { dialog, _ ->
+                dialog.dismiss()
+                viewModel.getArtists(mQuery)
+            }
+            .create()
+        errorDialog.show()
     }
 
     private fun showLoadingScreen() {
@@ -97,6 +109,7 @@ class SearchFragment : BaseFragment<SearchViewModel>(), ArtistItemClickListener 
             }
 
             override fun onQueryTextChange(query: String): Boolean {
+                mQuery = query
                 if (query.isEmpty()) {
                     viewModel.enableStartState()
                 }

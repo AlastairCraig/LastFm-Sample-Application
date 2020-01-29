@@ -7,6 +7,11 @@
     <!--No Results Screen-->
     <string name="no_results_screen_text">No Artists Found</string>
 
+    <!-- Network Error-->
+    <string name="error_title">Something went wrong…</string>
+    <string name="error_message">An error occurred when retrieving the data</string>
+    <string name="error_button_text">Retry</string>
+
     <!--    Artist list item-->
     <string name="listeners_heading">Listeners:</string>
 </resources>
