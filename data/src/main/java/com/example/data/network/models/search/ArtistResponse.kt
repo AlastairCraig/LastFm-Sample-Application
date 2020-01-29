@@ -19,7 +19,13 @@ data class ArtistResponse(
     val image: List<Image>
 )
 
-fun List<ArtistResponse>.toArtistDomain(): List<Artist>{
-    return this.map { Artist(it.name, it.image[0].text, it.listeners) }
+fun List<ArtistResponse>.toArtistDomain(): List<Artist> {
+    return this.map {
+        Artist(
+            it.name,
+            it.image[0].text,
+            it.listeners
+        )
+    }
 }
 

@@ -1,6 +1,7 @@
 package com.example.data.network.models.info
 
 
+import com.example.domain.entites.ArtistInfo
 import com.google.gson.annotations.SerializedName
 
 data class ArtistInfoResponse(
@@ -25,3 +26,11 @@ data class ArtistInfoResponse(
     @SerializedName("bio")
     val bio: Bio
 )
+
+fun ArtistInfoResponse.toArtistInfoDomain(): ArtistInfo {
+    return ArtistInfo(
+        name,
+        image[3].text,
+        bio.summary
+    )
+}
