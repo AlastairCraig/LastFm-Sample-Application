@@ -8,6 +8,7 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import androidx.lifecycle.Observer
+import androidx.navigation.Navigation
 import com.example.domain.entites.Artist
 import com.example.lastfm.R
 import com.example.lastfm.base.framework.BaseFragment
@@ -49,8 +50,10 @@ class SearchFragment : BaseFragment<SearchViewModel>(), ArtistItemClickListener 
         super.onCreateOptionsMenu(menu, inflater)
     }
 
-    override fun onArtistItemClicked(artist: Artist) {
-        Toast.makeText(activity, "clicked", Toast.LENGTH_SHORT).show()
+    override fun onArtistItemClicked(artistName: String) {
+
+        val directions = SearchFragmentDirections.actionSearchFragmentToDetailFragment(artistName)
+        Navigation.findNavController(view!!).navigate(directions)
     }
 
     private fun showStartScreen() {

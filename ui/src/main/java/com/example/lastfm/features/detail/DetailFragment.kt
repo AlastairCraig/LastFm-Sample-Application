@@ -2,10 +2,13 @@ package com.example.lastfm.features.detail
 
 import android.os.Bundle
 import android.view.View
+import android.widget.ImageView
 import androidx.lifecycle.Observer
 import com.example.lastfm.R
 import com.example.lastfm.base.framework.BaseFragment
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.fragment_detail.*
+import kotlinx.android.synthetic.main.view_detail.*
 
 class DetailFragment : BaseFragment<DetailViewModel>() {
 
@@ -42,5 +45,20 @@ class DetailFragment : BaseFragment<DetailViewModel>() {
 
         detail_screen.visibility = View.VISIBLE
         loading_screen.visibility = View.GONE
+        artist_name.text = data.info.name
+        summary.text = data.info.summary
+        loadlImage(data.info.imageUrl, artist_image)
     }
+
+    private fun loadlImage(url: String?, imageView: ImageView) =
+        if (url == null || url.isEmpty()) {
+
+            imageView.setImageResource(R.drawable.ic_error)
+        } else {
+
+            Picasso.get()
+                .load(url)
+                .error(R.drawable.ic_error)
+                .into(imageView)
+        }
 }
