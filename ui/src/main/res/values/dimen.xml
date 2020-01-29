@@ -14,5 +14,8 @@
     <dimen name="thumbnail_image_size">100dp</dimen>
     <dimen name="artist_name_text_size">24sp</dimen>
 
+    <!--    Artist detail-->
+    <dimen name="artist_detail_image_size">300dp</dimen>
+    <dimen name="artist_detail_name_text_size">50sp</dimen>
 
 </resources>
