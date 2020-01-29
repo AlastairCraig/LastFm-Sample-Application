@@ -1,6 +1,6 @@
 package com.example.data.di
 
-import com.example.data.network.ArtistSearchService
+import com.example.data.network.ArtistService
 import com.example.data.network.ArtistApi
 import dagger.Module
 import dagger.Provides
@@ -50,8 +50,8 @@ class NetworkModule {
 
     @Singleton
     @Provides
-    fun provideArtistSearchService(artistApi: ArtistApi): ArtistSearchService {
-        return ArtistSearchService(artistApi)
+    fun provideArtistService(artistApi: ArtistApi): ArtistService {
+        return ArtistService(artistApi)
     }
 
     @Singleton

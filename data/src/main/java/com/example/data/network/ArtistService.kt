@@ -5,7 +5,7 @@ import io.reactivex.Single
 import javax.inject.Singleton
 
 @Singleton
-class ArtistSearchService(private val api: ArtistApi) {
+class ArtistService(private val api: ArtistApi) {
 
     fun getArtists(query: String): Single<List<ArtistResponse>> {
         return api.getArtists(query).map { it.results.artistmatches.artist }
