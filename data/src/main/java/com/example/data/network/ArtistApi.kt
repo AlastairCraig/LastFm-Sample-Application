@@ -1,6 +1,6 @@
 package com.example.data.network
 
-import com.example.data.network.models.ArtistSearchResponse
+import com.example.data.network.models.search.ArtistSearchResponse
 import com.example.data.network.models.info.InfoResponse
 import io.reactivex.Single
 import retrofit2.http.GET
