@@ -5,5 +5,5 @@ import com.google.gson.annotations.SerializedName
 
 data class InfoResponse(
     @SerializedName("artist")
-    val artistInfo: ArtistInfo
+    val artistInfo: ArtistInfoResponse
 )

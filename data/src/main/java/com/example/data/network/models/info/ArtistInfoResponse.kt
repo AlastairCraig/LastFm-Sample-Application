@@ -3,7 +3,7 @@ package com.example.data.network.models.info
 
 import com.google.gson.annotations.SerializedName
 
-data class ArtistInfo(
+data class ArtistInfoResponse(
     @SerializedName("name")
     val name: String,
     @SerializedName("mbid")

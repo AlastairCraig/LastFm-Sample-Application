@@ -1,7 +1,7 @@
 package com.example.data.network
 
 import com.example.data.network.models.search.ArtistResponse
-import com.example.data.network.models.info.ArtistInfo
+import com.example.data.network.models.info.ArtistInfoResponse
 import io.reactivex.Single
 import javax.inject.Singleton
 
@@ -12,7 +12,7 @@ class ArtistService(private val api: ArtistApi) {
         return api.getArtists(query).map { it.results.artistmatches.artist }
     }
 
-    fun getArtistInfo(artistName: String) : Single<ArtistInfo>{
+    fun getArtistInfo(artistName: String) : Single<ArtistInfoResponse>{
         return api.getArtistInfo(artistName).map { it.artistInfo }
     }
 }
