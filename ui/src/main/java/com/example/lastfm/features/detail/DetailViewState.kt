@@ -6,5 +6,5 @@ sealed class DetailViewState {
 
     object Loading : DetailViewState()
     object Error : DetailViewState()
-    data class DataReady(val info: List<ArtistInfo>) : DetailViewState()
+    data class DataReady(val info: ArtistInfo) : DetailViewState()
 }
