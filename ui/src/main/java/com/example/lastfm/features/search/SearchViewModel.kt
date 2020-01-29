@@ -1,6 +1,5 @@
 package com.example.lastfm.features.search
 
-import android.app.Application
 import androidx.lifecycle.MutableLiveData
 import com.example.domain.entites.Artist
 import com.example.domain.usecases.GetArtistsUseCase
@@ -10,10 +9,9 @@ import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
 class SearchViewModel @Inject constructor(
-    private val app: Application,
     private val getArtistsUseCase: GetArtistsUseCase
 ) :
-    BaseViewModel(app) {
+    BaseViewModel() {
 
     val state: MutableLiveData<SearchViewState> = MutableLiveData()
 
