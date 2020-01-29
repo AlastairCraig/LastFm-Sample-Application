@@ -2,6 +2,7 @@ package com.example.lastfm.features.search
 
 import android.app.Application
 import androidx.lifecycle.MutableLiveData
+import com.example.domain.entites.Artist
 import com.example.domain.usecases.GetArtistsUseCase
 import com.example.lastfm.base.framework.BaseViewModel
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -16,17 +17,28 @@ class SearchViewModel @Inject constructor(
 
     val state: MutableLiveData<SearchViewState> = MutableLiveData()
 
-    fun enableStartState(){
+    fun enableStartState() {
         state.value = SearchViewState.StartScreen
     }
 
-    fun getData() {
-        val QUERY = "cher"
+    fun getArtists(query: String) {
 
-        val disposable = getArtistsUseCase.execute(QUERY)
+        state.value = SearchViewState.Loading
+
+        val disposable = getArtistsUseCase.execute(query)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
+            .doOnSuccess { checkListState(it) }
             .subscribe()
         addDisposable(disposable)
+    }
+
+    private fun checkListState(list: List<Artist>) {
+
+        if (list.isEmpty()) {
+            state.value = SearchViewState.NoResults
+        } else {
+            state.value = SearchViewState.DataReady(list)
+        }
     }
 }

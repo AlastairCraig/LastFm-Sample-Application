@@ -5,7 +5,9 @@ import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
+import android.widget.Toast
 import androidx.lifecycle.Observer
+import com.example.domain.entites.Artist
 import com.example.lastfm.R
 import com.example.lastfm.base.framework.BaseFragment
 import com.example.lastfm.features.search.SearchViewModel
@@ -13,7 +15,7 @@ import com.example.lastfm.features.search.SearchViewState
 import com.miguelcatalan.materialsearchview.MaterialSearchView
 import kotlinx.android.synthetic.main.fragment_search.*
 
-class SearchFragment : BaseFragment<SearchViewModel>() {
+class SearchFragment : BaseFragment<SearchViewModel>(), ArtistItemClickListener {
 
     override fun getViewModelClass(): Class<SearchViewModel> =
         SearchViewModel::class.java
@@ -35,7 +37,6 @@ class SearchFragment : BaseFragment<SearchViewModel>() {
         setHasOptionsMenu(true)
         setUpSearchView()
         viewModel.enableStartState()
-        //viewModel.getData()
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -45,13 +46,29 @@ class SearchFragment : BaseFragment<SearchViewModel>() {
         super.onCreateOptionsMenu(menu, inflater)
     }
 
+    override fun onArtistItemClicked(artist: Artist) {
+        Toast.makeText(activity, "clicked", Toast.LENGTH_SHORT).show()
+    }
+
     private fun showStartScreen() {
 
         start_screen.visibility = View.VISIBLE
+        recycler_view.visibility = View.GONE
     }
 
     private fun showList(data: SearchViewState.DataReady) {
 
+        recycler_view.visibility = View.VISIBLE
+        start_screen.visibility = View.GONE
+        setupRecyclerView(data.artists)
+    }
+
+    private fun setupRecyclerView(artistList: List<Artist>) {
+
+        val favoritesAdapter = ArtistListAdapter(artistList, this)
+        recycler_view.apply {
+            adapter = favoritesAdapter
+        }
     }
 
     private fun showEmptyListView() {
@@ -67,18 +84,19 @@ class SearchFragment : BaseFragment<SearchViewModel>() {
     }
 
     private fun setUpSearchView() {
+
         search_view.setOnQueryTextListener(object : MaterialSearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String): Boolean {
-                //get data
+                viewModel.getArtists(query)
                 return false
             }
 
             override fun onQueryTextChange(query: String): Boolean {
                 if (query.isEmpty()) {
-                    //show start state
+                    viewModel.enableStartState()
                 }
                 if (query.length > 2) {
-                    //get data
+                    viewModel.getArtists(query)
                 }
                 return false
             }

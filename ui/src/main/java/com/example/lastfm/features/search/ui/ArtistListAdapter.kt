@@ -46,12 +46,17 @@ class ArtistListAdapter(
         }
     }
 
-    private fun loadThumbnailImage(url: String, imageView: ImageView) {
+    private fun loadThumbnailImage(url: String?, imageView: ImageView) =
+        if (url == null || url.isEmpty()) {
 
-        Picasso.get()
-            .load(url)
-            .into(imageView)
-    }
+            imageView.setImageResource(R.drawable.ic_error)
+        } else {
+
+            Picasso.get()
+                .load(url)
+                .error(R.drawable.ic_error)
+                .into(imageView)
+        }
 
     inner class ArtistViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
