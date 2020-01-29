@@ -54,12 +54,14 @@ class SearchFragment : BaseFragment<SearchViewModel>(), ArtistItemClickListener 
 
         start_screen.visibility = View.VISIBLE
         recycler_view.visibility = View.GONE
+        no_results_screen.visibility = View.GONE
     }
 
     private fun showList(data: SearchViewState.DataReady) {
 
         recycler_view.visibility = View.VISIBLE
         start_screen.visibility = View.GONE
+        no_results_screen.visibility = View.GONE
         setupRecyclerView(data.artists)
     }
 
@@ -73,6 +75,9 @@ class SearchFragment : BaseFragment<SearchViewModel>(), ArtistItemClickListener 
 
     private fun showEmptyListView() {
 
+        no_results_screen.visibility = View.VISIBLE
+        start_screen.visibility = View.GONE
+        recycler_view.visibility = View.GONE
     }
 
     private fun showErrorDialog() {

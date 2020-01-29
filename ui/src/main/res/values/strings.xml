@@ -4,6 +4,9 @@
     <!--Start Screen-->
     <string name="start_screen_text">Search for Music Artists by clicking the search icon at the top</string>
 
+    <!--No Results Screen-->
+    <string name="no_results_screen_text">No Artists Found</string>
+
     <!--    Artist list item-->
     <string name="listeners_heading">Listeners:</string>
 </resources>
