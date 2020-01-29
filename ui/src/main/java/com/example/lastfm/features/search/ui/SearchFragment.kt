@@ -111,16 +111,15 @@ class SearchFragment : BaseFragment<SearchViewModel>(), ArtistItemClickListener 
 
         search_view.setOnQueryTextListener(object : MaterialSearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String): Boolean {
-                viewModel.getArtists(query)
-                return false
+                search_view.hideKeyboard(view)
+                return true
             }
 
             override fun onQueryTextChange(query: String): Boolean {
                 mQuery = query
                 if (query.isEmpty()) {
                     viewModel.enableStartState()
-                }
-                if (query.length > 2) {
+                } else {
                     viewModel.getArtists(query)
                 }
                 return false
