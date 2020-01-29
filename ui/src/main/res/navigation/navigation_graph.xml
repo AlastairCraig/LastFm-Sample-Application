@@ -4,9 +4,15 @@
     android:id="@+id/navigation_graph"
     app:startDestination="@+id/searchFragment">
 
-
     <fragment
         android:id="@+id/searchFragment"
         android:name="com.example.lastfm.features.search.ui.SearchFragment"
         android:label="SearchFragment" />
+
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.lastfm.features.detail.DetailFragment"
+        android:label="DetailFragment" />
+
+
 </navigation>

@@ -4,5 +4,5 @@ import com.example.domain.entites.Artist
 
 interface ArtistItemClickListener {
 
-    fun onArtistItemClicked(artist: Artist)
+    fun onArtistItemClicked(artistName: String)
 }

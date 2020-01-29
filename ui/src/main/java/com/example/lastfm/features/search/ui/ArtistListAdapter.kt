@@ -40,7 +40,7 @@ class ArtistListAdapter(
                 holder.listeners.text = artistItem.listeners
                 loadThumbnailImage(artistItem.thumbnailUrl, holder.thumbnail)
                 holder.itemView.setOnClickListener {
-                    listener.onArtistItemClicked(artistItem)
+                    listener.onArtistItemClicked(artistItem.name)
                 }
             }
         }
