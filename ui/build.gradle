@@ -32,6 +32,9 @@ dependencies {
     //Material Search View
     implementation "com.miguelcatalan:materialsearchview:$materialSearchViewVersion"
 
+    //Picasso
+    implementation "com.squareup.picasso:picasso:$picassoVersion"
+
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 }
