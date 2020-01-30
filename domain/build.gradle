@@ -29,4 +29,8 @@ dependencies {
     testImplementation "junit:junit:$jUnit4Version"
     testImplementation "org.assertj:assertj-core:$assertJVersion"
     testImplementation "androidx.arch.core:core-testing:$androidxLifecycleVersion"
+    //Mockito
+    testImplementation "org.mockito:mockito-core:$mockitoCoreVersion"
+    testImplementation "org.mockito:mockito-inline:$mockitoInlineVersion"
+    testImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:$mockitoKotlinVersion"
 }
