@@ -44,8 +44,11 @@ dependencies {
     //Unit Testing
     testImplementation "junit:junit:$jUnit4Version"
     testImplementation "org.assertj:assertj-core:$assertJVersion"
-    testImplementation "io.mockk:mockk:$mockkVersion"
     testImplementation "androidx.arch.core:core-testing:$androidxLifecycleVersion"
+    //Mockito
+    testImplementation "org.mockito:mockito-core:$mockitoCoreVersion"
+    testImplementation "org.mockito:mockito-inline:$mockitoInlineVersion"
+    testImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:$mockitoKotlinVersion"
 
     //Dagger
     implementation "com.google.dagger:dagger:$daggerVersion"

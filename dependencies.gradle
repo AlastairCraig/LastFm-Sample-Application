@@ -20,8 +20,9 @@ ext {
     //testing
     jUnit4Version = "4.12"
     assertJVersion = "3.12.2"
-    mockkVersion = "1.8.6"
-
+    mockitoCoreVersion = "2.25.0"
+    mockitoInlineVersion = "2.21.0"
+    mockitoKotlinVersion = "2.1.0"
     //data
     retrofit2Version = '2.5.0'
     okHttpVerison = '4.0.0'

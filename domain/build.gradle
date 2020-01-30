@@ -28,6 +28,5 @@ dependencies {
     //Unit Testing
     testImplementation "junit:junit:$jUnit4Version"
     testImplementation "org.assertj:assertj-core:$assertJVersion"
-    testImplementation "io.mockk:mockk:$mockkVersion"
     testImplementation "androidx.arch.core:core-testing:$androidxLifecycleVersion"
 }
