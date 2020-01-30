@@ -50,7 +50,7 @@ class SearchViewModelTest : BaseUnitTest() {
     }
 
     @Test
-    fun `start screen is loaded first`() {
+    fun `start screen is shown`() {
 
         viewModel.state.observeForever(observer)
         viewModel.enableStartState()
