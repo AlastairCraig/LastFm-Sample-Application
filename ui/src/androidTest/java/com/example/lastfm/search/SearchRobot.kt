@@ -1,5 +1,6 @@
-package com.example.lastfm
+package com.example.lastfm.search
 
+import com.example.lastfm.R
 import com.schibsted.spain.barista.assertion.BaristaListAssertions
 import com.schibsted.spain.barista.assertion.BaristaVisibilityAssertions
 import com.schibsted.spain.barista.interaction.BaristaClickInteractions
@@ -29,7 +30,8 @@ class SearchRobot {
         )
         BaristaListAssertions.assertDisplayedAtPosition(
             recyclerView, 0,
-            artistNameTextView, artistName
+            artistNameTextView,
+            artistName
         )
     }
 

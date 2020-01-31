@@ -1,7 +1,8 @@
-package com.example.lastfm
+package com.example.lastfm.search
 
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.rule.ActivityTestRule
+import com.example.lastfm.MainActivity
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
