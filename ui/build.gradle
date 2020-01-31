@@ -10,7 +10,7 @@ apply from: rootDir.absolutePath + '/base.gradle'
 android {
 
     defaultConfig {
-        testInstrumentationRunner "com.deividasstr.ui.utils.TestAppRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 }
 
@@ -38,6 +38,7 @@ dependencies {
     //UI Testing
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation "androidx.test.espresso:espresso-core:$espressoCoreVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-intents:$espressoCoreVersion"
     androidTestImplementation "androidx.test:rules:$runnerVersion"
     androidTestImplementation "androidx.test:runner:$runnerVersion"
     androidTestImplementation('com.schibsted.spain:barista:2.8.0') {
