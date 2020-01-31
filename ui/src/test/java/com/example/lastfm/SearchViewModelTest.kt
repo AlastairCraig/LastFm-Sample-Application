@@ -5,7 +5,7 @@ import androidx.lifecycle.Observer
 import com.example.domain.entites.Artist
 import com.example.domain.usecases.GetArtistsUseCase
 import com.example.lastfm.UITestData.Companion.ARTIST_NAME
-import com.example.lastfm.UITestData.Companion.EMPTY_LIST_OF_ARTISTS
+import com.example.lastfm.UITestData.Companion.MOCK_EMPTY_LIST_OF_ARTISTS
 import com.example.lastfm.UITestData.Companion.LIST_OF_ARTISTS
 import com.example.lastfm.features.search.SearchViewModel
 import com.example.lastfm.features.search.SearchViewState
@@ -74,7 +74,7 @@ class SearchViewModelTest : BaseUnitTest() {
     @Test
     fun `no results state shown when no data returned`() {
 
-        val testResponse = Single.just(EMPTY_LIST_OF_ARTISTS)
+        val testResponse = Single.just(MOCK_EMPTY_LIST_OF_ARTISTS)
         whenever(getArtistsUseCase.execute(ARTIST_NAME)).thenReturn(testResponse)
 
         viewModel.state.observeForever(observer)

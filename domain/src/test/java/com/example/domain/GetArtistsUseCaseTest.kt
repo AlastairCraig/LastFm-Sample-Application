@@ -1,7 +1,7 @@
 package com.example.domain
 
 import com.example.domain.DomainTestData.Companion.ARTIST_NAME
-import com.example.domain.DomainTestData.Companion.LIST_OF_ARTISTS
+import com.example.domain.DomainTestData.Companion.MOCK_LIST_OF_ARTISTS
 
 import com.example.domain.repositories.ArtistRepo
 import com.example.domain.usecases.GetArtistsUseCase
@@ -29,7 +29,7 @@ class GetArtistsUseCaseTest {
 
     @Test
     fun `get artists use case test`() {
-        val testResponse = Single.just(LIST_OF_ARTISTS)
+        val testResponse = Single.just(MOCK_LIST_OF_ARTISTS)
         whenever(repo.getArtists(ARTIST_NAME)).thenReturn(testResponse)
 
         useCase.execute(ARTIST_NAME).subscribeWith(testSubscriber)

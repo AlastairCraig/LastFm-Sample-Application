@@ -1,8 +1,8 @@
 package com.example.data
 
-import com.example.data.DataTestData.Companion.ARTIST_INFO_RESPONSE
+import com.example.data.DataTestData.Companion.MOCK_ARTIST_INFO_RESPONSE
 import com.example.data.DataTestData.Companion.ARTIST_NAME
-import com.example.data.DataTestData.Companion.LIST_OF_ARTIST_RESPONSES
+import com.example.data.DataTestData.Companion.MOCK_LIST_OF_ARTIST_RESPONSES
 import com.example.data.DataTestData.Companion.MOCK_INFO_RESPONSE
 import com.example.data.DataTestData.Companion.MOCK_SEARCH_RESPONSE
 import com.example.data.network.ArtistApi
@@ -35,7 +35,7 @@ class ArtistServiceTest {
 
         artistService.getArtists(ARTIST_NAME).subscribe(testSubscriber)
 
-        testSubscriber.assertValue(LIST_OF_ARTIST_RESPONSES)
+        testSubscriber.assertValue(MOCK_LIST_OF_ARTIST_RESPONSES)
         testSubscriber.assertComplete()
     }
 
@@ -48,7 +48,7 @@ class ArtistServiceTest {
 
         artistService.getArtistInfo(ARTIST_NAME).subscribe(testSubscriber)
 
-        testSubscriber.assertValue(ARTIST_INFO_RESPONSE)
+        testSubscriber.assertValue(MOCK_ARTIST_INFO_RESPONSE)
         testSubscriber.assertComplete()
     }
 }

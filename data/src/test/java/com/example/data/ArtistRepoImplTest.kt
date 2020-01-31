@@ -1,8 +1,8 @@
 package com.example.data
 
-import com.example.data.DataTestData.Companion.ARTIST_INFO_RESPONSE
+import com.example.data.DataTestData.Companion.MOCK_ARTIST_INFO_RESPONSE
 import com.example.data.DataTestData.Companion.ARTIST_NAME
-import com.example.data.DataTestData.Companion.LIST_OF_ARTIST_RESPONSES
+import com.example.data.DataTestData.Companion.MOCK_LIST_OF_ARTIST_RESPONSES
 import com.example.data.DataTestData.Companion.MOCK_ARTIST_INFO
 import com.example.data.DataTestData.Companion.MOCK_ARTIST_LIST
 import com.example.data.network.ArtistService
@@ -31,7 +31,7 @@ class ArtistRepoImplTest {
     fun `get artists from repo test`() {
 
         given { service.getArtists(ARTIST_NAME) }
-            .willReturn(Single.just(LIST_OF_ARTIST_RESPONSES))
+            .willReturn(Single.just(MOCK_LIST_OF_ARTIST_RESPONSES))
 
         repo.getArtists(ARTIST_NAME).subscribe(testSubscriber)
 
@@ -43,7 +43,7 @@ class ArtistRepoImplTest {
     fun `get artist info from repo test`() {
 
         given { service.getArtistInfo(ARTIST_NAME) }
-            .willReturn(Single.just(ARTIST_INFO_RESPONSE))
+            .willReturn(Single.just(MOCK_ARTIST_INFO_RESPONSE))
 
         repo.getArtistInfo(ARTIST_NAME).subscribe(testSubscriber)
 

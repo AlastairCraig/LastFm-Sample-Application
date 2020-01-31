@@ -16,6 +16,7 @@ class DataTestData {
         private const val IMAGE_URL: String =
             "https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png"
 
+
         //Search Response Data
         private val artistResponse =
             ArtistResponse(
@@ -25,16 +26,15 @@ class DataTestData {
                     )
                 )
             )
-        val LIST_OF_ARTIST_RESPONSES: List<ArtistResponse> =
+        val MOCK_LIST_OF_ARTIST_RESPONSES: List<ArtistResponse> =
             listOf(artistResponse, artistResponse, artistResponse)
-        private val artistMatches = Artistmatches(LIST_OF_ARTIST_RESPONSES)
+        private val artistMatches = Artistmatches(MOCK_LIST_OF_ARTIST_RESPONSES)
         private val openSearchQuery =
             OpensearchQuery(test_string, test_string, test_string, test_string)
         private val attr = Attr(test_string)
         private val results =
             Results(openSearchQuery, test_string, test_string, test_string, artistMatches, attr)
         val MOCK_SEARCH_RESPONSE = ArtistSearchResponse(results)
-
 
         private val mockArtist = Artist(ARTIST_NAME, IMAGE_URL, LISTENERS)
         val MOCK_ARTIST_LIST = listOf(mockArtist, mockArtist, mockArtist)
@@ -54,7 +54,7 @@ class DataTestData {
         )
 
         private val infoImage = InfoImage(IMAGE_URL, test_string)
-        val ARTIST_INFO_RESPONSE =
+        val MOCK_ARTIST_INFO_RESPONSE =
             ArtistInfoResponse(
                 ARTIST_NAME, test_string, test_string, listOf(
                     infoImage, infoImage, infoImage, infoImage
@@ -62,9 +62,7 @@ class DataTestData {
                     test_string, test_string
                 ), Similar(listOf()), Tags(listOf()), bio
             )
-        val MOCK_INFO_RESPONSE = InfoResponse(ARTIST_INFO_RESPONSE)
-
-
+        val MOCK_INFO_RESPONSE = InfoResponse(MOCK_ARTIST_INFO_RESPONSE)
         val MOCK_ARTIST_INFO = ArtistInfo(ARTIST_NAME, IMAGE_URL, summary)
     }
 }
