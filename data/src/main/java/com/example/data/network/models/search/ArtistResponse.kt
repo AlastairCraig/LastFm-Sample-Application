@@ -16,7 +16,7 @@ data class ArtistResponse(
     @SerializedName("streamable")
     val streamable: String,
     @SerializedName("image")
-    val image: List<Image>
+    val image: List<SearchImage>
 )
 
 fun List<ArtistResponse>.toArtistDomain(): List<Artist> {

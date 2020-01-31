@@ -12,7 +12,7 @@ data class ArtistInfoResponse(
     @SerializedName("url")
     val url: String,
     @SerializedName("image")
-    val image: List<Image>,
+    val image: List<InfoImage>,
     @SerializedName("streamable")
     val streamable: String,
     @SerializedName("ontour")

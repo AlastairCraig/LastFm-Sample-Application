@@ -3,7 +3,7 @@ package com.example.data.network.models.info
 
 import com.google.gson.annotations.SerializedName
 
-data class Image(
+data class InfoImage(
     @SerializedName("#text")
     val text: String,
     @SerializedName("size")
