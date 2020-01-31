@@ -8,6 +8,8 @@ ext {
 
     androidxLifecycleVersion = "2.1.0"
     navigationVersion = '2.2.0'
+
+    //Base
     daggerVersion = '2.22.1'
     rxJavaVersion = '2.2.8'
     rxAndroidVersion = '2.0.2'
@@ -17,13 +19,19 @@ ext {
     materialSearchViewVersion = '1.4.0'
     picassoVersion = '2.71828'
 
-    //testing
+    //Data
+    retrofit2Version = '2.5.0'
+    okHttpVerison = '4.0.0'
+
+    //Unit Testing
     jUnit4Version = "4.12"
     assertJVersion = "3.12.2"
     mockitoCoreVersion = "2.25.0"
     mockitoInlineVersion = "2.21.0"
     mockitoKotlinVersion = "2.1.0"
-    //data
-    retrofit2Version = '2.5.0'
-    okHttpVerison = '4.0.0'
+
+    //UI Testing
+    espressoCoreVersion = '3.2.0'
+    runnerVersion = '1.1.0-alpha3'
+
 }

@@ -35,6 +35,13 @@ dependencies {
     //Picasso
     implementation "com.squareup.picasso:picasso:$picassoVersion"
 
+    //UI Testing
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espressoCoreVersion"
+    androidTestImplementation "androidx.test:rules:$runnerVersion"
+    androidTestImplementation "androidx.test:runner:$runnerVersion"
+    androidTestImplementation('com.schibsted.spain:barista:2.8.0') {
+        exclude group: 'com.android.support'
+        exclude group: 'org.jetbrains.kotlin'
+    }
 }
