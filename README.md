@@ -16,3 +16,7 @@ A small application that retrieves artists via a search query from the [LastFm A
 - Show the (artist, album song)search results to the user
 - Show information about the (artist, album or song) and any artwork available
 - If the user selects a result then display additional basic information about the (artist, album or song). This view does not need to be exhaustive.
+
+### API Issues
+- The api returns the same image for every artist
+- The api can return null values for some artists
